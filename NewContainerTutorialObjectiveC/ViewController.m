@@ -9,15 +9,24 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
+@property (strong, nonatomic) IBOutlet UIView *firstContainer;
+@property (strong, nonatomic) IBOutlet UIView *secondContainer;
 @end
 
 @implementation ViewController
+bool firstIsShown = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-
+- (IBAction)myButton:(id)sender {
+    if(firstIsShown) {
+        _firstContainer.hidden = YES;
+        firstIsShown = NO;
+    } else {
+        _firstContainer.hidden = NO;
+        firstIsShown = YES;
+    }
+}
 @end
